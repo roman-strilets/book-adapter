@@ -1,10 +1,9 @@
 {
-  "name": "adjuster",
+  "name": "book_adapter",
   "version": "1.0.0",
-  "description": "A TypeScript project",
-  "main": "dist/index.js",
+  "description": "",
+  "main": "",
   "scripts": {
-    "build": "tsc",
     "start": "node dist/index.js",
     "dev": "ts-node src/index.ts",
     "adapt": "ts-node src/main.ts",
@@ -13,7 +12,6 @@
     "adapt:a2": "ts-node src/main.ts -- --level A2 --output ./books/adapted_a2.txt",
     "adapt:b1": "ts-node src/main.ts -- --level B1 --output ./books/adapted_b1.txt",
     "adapt:b2": "ts-node src/main.ts -- --level B2 --output ./books/adapted_b2.txt",
-    "test-adapt": "ts-node src/test.ts",
     "clean": "rm -rf dist"
   },
   "keywords": [],
