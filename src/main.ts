@@ -74,12 +74,7 @@ class BookAdapter {
       // Combine and save the final adapted book
       const adaptedBook = adaptedChunks.join('\n\n');
       this.saveAdaptedBook(adaptedBook);
-      
-      // Clean up progress file
-      if (fs.existsSync(progressFile)) {
-        fs.unlinkSync(progressFile);
-      }
-      
+
       console.log(`✅ Book adaptation completed! Output saved to: ${this.config.outputFile}`);
       
     } catch (error) {
@@ -276,23 +271,6 @@ Adapted text:`;
                   `---\n\n`;
     
     fs.writeFileSync(this.config.outputFile, header + content, 'utf-8');
-  }
-
-  /**
-   * Save intermediate results
-   */
-  private saveIntermediateResult(filePath: string, content: string, processed: number, total: number): void {
-    const outputDir = path.dirname(filePath);
-    if (!fs.existsSync(outputDir)) {
-      fs.mkdirSync(outputDir, { recursive: true });
-    }
-    
-    const header = `# Intermediate Result - ${processed}/${total} chunks processed\n\n` +
-                  `*This is a partial adaptation for ${this.config.targetLevel} level English learners.*\n\n` +
-                  `*Progress: ${Math.round((processed / total) * 100)}% complete*\n\n` +
-                  `---\n\n`;
-    
-    fs.writeFileSync(filePath, header + content, 'utf-8');
   }
 
   /**

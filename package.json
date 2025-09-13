@@ -4,8 +4,6 @@
   "description": "",
   "main": "",
   "scripts": {
-    "start": "node dist/index.js",
-    "dev": "ts-node src/index.ts",
     "adapt": "ts-node src/main.ts",
     "adapt:help": "ts-node src/main.ts -- --help",
     "adapt:a1": "ts-node src/main.ts -- --level A1 --output ./books/adapted_a1.txt",
@@ -21,9 +19,5 @@
     "@types/node": "^20.0.0",
     "ts-node": "^10.9.0",
     "typescript": "^5.0.0"
-  },
-  "dependencies": {
-    "@types/node-fetch": "^2.6.13",
-    "node-fetch": "^2.7.0"
   }
 }
